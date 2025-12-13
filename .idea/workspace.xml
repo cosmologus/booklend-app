@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a878d458-5488-453d-a7dc-c56265295551" name="Changes" comment="Removed images">
+      <change beforePath="$PROJECT_DIR$/booklend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/BooklendApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/config/OpenApiConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/controller/AdminBookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/controller/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/controller/RentalController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/dto/BookCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/dto/LoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/dto/RegisterRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/dto/RentalDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/mapper/RentalMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/model/Rental.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/model/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/repository/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/repository/RentalRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/security/CustomUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/security/JwtAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/security/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/security/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/service/AdminBookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/service/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/service/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/service/FileStorageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/java/com/example/booklend/service/RentalService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/resources/application-docker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/src/test/java/com/example/booklend/BooklendApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/booklend-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/booklend-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/application-docker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/BooklendApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/config/OpenApiConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/controller/AdminBookController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/controller/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/controller/BookController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/controller/RentalController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/dto/BookCreateDto$BookCreateDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/dto/BookCreateDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/dto/LoginRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/dto/RegisterRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/dto/RentalDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/mapper/RentalMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/model/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/model/Rental.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/model/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/repository/BookRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/repository/RentalRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/security/CustomUserDetailsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/security/JwtAuthenticationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/security/JwtUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/security/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/service/AdminBookService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/service/AuthService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/service/BookService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/service/FileStorageService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/classes/com/example/booklend/service/RentalService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/surefire-reports/TEST-com.example.booklend.BooklendApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/surefire-reports/com.example.booklend.BooklendApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/target/test-classes/com/example/booklend/BooklendApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booklend/uploads/.gitkeep" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Osnaga-Robert&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Osnaga-Robert/booklend-app.git&quot;,
+    &quot;accountId&quot;: &quot;8678b552-eb40-4922-9508-de5da060eccb&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="36nZdSgG0Urc5jALCWkTy1pX8WW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/robertosnaga/Master/BSD/booklend-app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a878d458-5488-453d-a7dc-c56265295551" name="Changes" comment="" />
+      <created>1765644382381</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765644382381</updated>
+      <workItem from="1765644383589" duration="1582000" />
+      <workItem from="1765647292682" duration="23000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add backend-project">
+      <option name="closed" value="true" />
+      <created>1765645126609</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765645126609</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add backend">
+      <option name="closed" value="true" />
+      <created>1765646283311</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765646283311</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Removed images">
+      <option name="closed" value="true" />
+      <created>1765646368408</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765646368408</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add backend-project" />
+    <MESSAGE value="Add backend" />
+    <MESSAGE value="Removed images" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed images" />
+  </component>
+</project>
