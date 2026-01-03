@@ -1,6 +1,8 @@
+import { useState, useEffect } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Navbar } from "./Navbar";
-import { Search, Star, TrendingUp, Heart, BookMarked, Compass, Sparkles, User, BookOpen } from "lucide-react";
+import { Search, Star, TrendingUp, Heart, BookMarked, Compass, Sparkles, User, BookOpen, Loader2 } from "lucide-react";
+import { fetchBooks, getBookImageUrl, Book } from "../api";
 
 interface HomePageProps {
     onNavigate: (page: string) => void;
@@ -8,59 +10,32 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate, onLogout }: HomePageProps) {
-    const featuredBooks = [
-        {
-            id: 1,
-            title: "The Midnight Garden",
-            author: "Sarah Johnson",
-            rating: 4.8,
-            reviews: 234,
-            image: "https://images.unsplash.com/photo-1758796629109-4f38e9374f45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rJTIwY292ZXIlMjBmaWN0aW9ufGVufDF8fHx8MTc2NDMzODk4OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-            price: "$12.99",
-            category: "Fiction",
-        },
-        {
-            id: 2,
-            title: "Mystery at Dawn",
-            author: "Michael Chen",
-            rating: 4.6,
-            reviews: 189,
-            image: "https://images.unsplash.com/photo-1604435062356-a880b007922c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rJTIwY292ZXIlMjBteXN0ZXJ5fGVufDF8fHx8MTc2NDMyNTkxMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-            price: "$14.99",
-            category: "Mystery",
-        },
-        {
-            id: 3,
-            title: "Love in Paris",
-            author: "Emma Williams",
-            rating: 4.9,
-            reviews: 312,
-            image: "https://images.unsplash.com/photo-1711185901354-73cb6b666c32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rJTIwY292ZXIlMjByb21hbmNlfGVufDF8fHx8MTc2NDMyMzQ5MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-            price: "$11.99",
-            category: "Romance",
-        },
-        {
-            id: 4,
-            title: "Science Wonders",
-            author: "Dr. James Porter",
-            rating: 4.7,
-            reviews: 156,
-            image: "https://images.unsplash.com/photo-1733426510973-4b7b7b3afd55?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rJTIwY292ZXIlMjBzY2llbmNlfGVufDF8fHx8MTc2NDM2NzQ3Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-            price: "$16.99",
-            category: "Science",
-        },
-    ];
+    const [books, setBooks] = useState<Book[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        async function loadBooks() {
+            setIsLoading(true);
+            const data = await fetchBooks();
+            setBooks(data);
+            setIsLoading(false);
+        }
+        loadBooks();
+    }, []);
 
     const categories = [
-        { name: "Fiction", icon: BookOpen, color: "bg-blue-100 text-blue-600", count: "2,340 books" },
-        { name: "Mystery", icon: Compass, color: "bg-purple-100 text-purple-600", count: "1,230 books" },
-        { name: "Romance", icon: Heart, color: "bg-pink-100 text-pink-600", count: "1,890 books" },
-        { name: "Science", icon: Sparkles, color: "bg-green-100 text-green-600", count: "890 books" },
-        { name: "Biography", icon: User, color: "bg-yellow-100 text-yellow-600", count: "670 books" },
-        { name: "Self-Help", icon: TrendingUp, color: "bg-orange-100 text-orange-600", count: "1,120 books" },
-        { name: "History", icon: BookMarked, color: "bg-red-100 text-red-600", count: "780 books" },
-        { name: "Fantasy", icon: Sparkles, color: "bg-indigo-100 text-indigo-600", count: "1,560 books" },
+        { name: "Fiction", icon: BookOpen, color: "bg-blue-100 text-blue-600", count: `${books.filter(b => b.genre === "Fiction").length} books` },
+        { name: "Fantasy", icon: Sparkles, color: "bg-indigo-100 text-indigo-600", count: `${books.filter(b => b.genre === "Fantasy").length} books` },
+        { name: "Romance", icon: Heart, color: "bg-pink-100 text-pink-600", count: `${books.filter(b => b.genre === "Romance").length} books` },
+        { name: "Dystopian", icon: Compass, color: "bg-purple-100 text-purple-600", count: `${books.filter(b => b.genre === "Dystopian").length} books` },
+        { name: "Biography", icon: User, color: "bg-yellow-100 text-yellow-600", count: `${books.filter(b => b.genre === "Biography").length} books` },
+        { name: "Self-Help", icon: TrendingUp, color: "bg-orange-100 text-orange-600", count: `${books.filter(b => b.genre === "Self-Help").length} books` },
+        { name: "History", icon: BookMarked, color: "bg-red-100 text-red-600", count: `${books.filter(b => b.genre === "History").length} books` },
+        { name: "Science", icon: Sparkles, color: "bg-green-100 text-green-600", count: `${books.filter(b => b.genre === "Science").length} books` },
     ];
+
+    // Get featured books (first 4)
+    const featuredBooks = books.slice(0, 4);
 
     return (
         <div className="min-h-screen bg-white">
@@ -94,7 +69,7 @@ export function HomePage({ onNavigate, onLogout }: HomePageProps) {
                         {/* Quick Stats */}
                         <div className="grid grid-cols-3 gap-6 mt-12 max-w-xl mx-auto">
                             <div>
-                                <div className="text-blue-600 mb-1">10,000+</div>
+                                <div className="text-blue-600 mb-1">{books.length}+</div>
                                 <div className="text-gray-600">Books</div>
                             </div>
                             <div>
@@ -118,48 +93,65 @@ export function HomePage({ onNavigate, onLogout }: HomePageProps) {
                             <h2 className="text-gray-900 mb-2">Featured Books</h2>
                             <p className="text-gray-600">Handpicked selections just for you</p>
                         </div>
-                        <button className="text-blue-600 hover:text-blue-700">View All</button>
+                        <button 
+                            onClick={() => onNavigate("browse")}
+                            className="text-blue-600 hover:text-blue-700"
+                        >
+                            View All
+                        </button>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {featuredBooks.map((book) => (
-                            <div
-                                key={book.id}
-                                className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"
-                            >
-                                <div className="relative aspect-[3/4] bg-gray-100">
-                                    <ImageWithFallback
-                                        src={book.image}
-                                        alt={book.title}
-                                        className="w-full h-full object-cover"
-                                    />
-                                    <button className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-sm">
-                                        <Heart className="w-4 h-4 text-gray-600" />
-                                    </button>
-                                </div>
-                                <div className="p-4">
-                                    <div className="inline-block px-2 py-1 bg-blue-100 text-blue-600 rounded text-sm mb-2">
-                                        {book.category}
-                                    </div>
-                                    <h3 className="text-gray-900 mb-1">{book.title}</h3>
-                                    <p className="text-gray-600 mb-3">{book.author}</p>
-                                    <div className="flex items-center gap-2 mb-3">
-                                        <div className="flex items-center gap-1">
-                                            <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                                            <span className="text-gray-900">{book.rating}</span>
-                                        </div>
-                                        <span className="text-gray-500">({book.reviews})</span>
-                                    </div>
-                                    <div className="flex items-center justify-between">
-                                        <span className="text-blue-600">{book.price}</span>
-                                        <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                                            Add to Cart
+                    {isLoading ? (
+                        <div className="flex items-center justify-center py-12">
+                            <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
+                            <span className="ml-2 text-gray-600">Loading books...</span>
+                        </div>
+                    ) : featuredBooks.length === 0 ? (
+                        <div className="text-center py-12">
+                            <BookOpen className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+                            <p className="text-gray-600">No books available yet.</p>
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {featuredBooks.map((book) => (
+                                <div
+                                    key={book.id}
+                                    className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"
+                                >
+                                    <div className="relative aspect-[3/4] bg-gray-100">
+                                        <ImageWithFallback
+                                            src={getBookImageUrl(book)}
+                                            alt={book.title}
+                                            className="w-full h-full object-cover"
+                                        />
+                                        <button className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-sm">
+                                            <Heart className="w-4 h-4 text-gray-600" />
                                         </button>
                                     </div>
+                                    <div className="p-4">
+                                        <div className="inline-block px-2 py-1 bg-blue-100 text-blue-600 rounded text-sm mb-2">
+                                            {book.genre}
+                                        </div>
+                                        <h3 className="text-gray-900 mb-1 font-medium">{book.title}</h3>
+                                        <p className="text-gray-600 mb-3">{book.author}</p>
+                                        <div className="flex items-center gap-2 mb-3">
+                                            <span className={`text-sm ${book.stockCount > 0 ? "text-green-600" : "text-red-600"}`}>
+                                                {book.stockCount > 0 ? `${book.stockCount} in stock` : "Out of stock"}
+                                            </span>
+                                        </div>
+                                        <div className="flex items-center justify-between">
+                                            <button 
+                                                className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                                disabled={book.stockCount === 0}
+                                            >
+                                                {book.stockCount > 0 ? "Borrow" : "Unavailable"}
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -177,6 +169,7 @@ export function HomePage({ onNavigate, onLogout }: HomePageProps) {
                             return (
                                 <button
                                     key={index}
+                                    onClick={() => onNavigate("browse")}
                                     className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow text-left"
                                 >
                                     <div
@@ -203,8 +196,11 @@ export function HomePage({ onNavigate, onLogout }: HomePageProps) {
                             personalized recommendations and exclusive deals.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
-                                Get Started Free
+                            <button 
+                                onClick={() => onNavigate("browse")}
+                                className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+                            >
+                                Browse Books
                             </button>
                             <button className="bg-transparent text-white border-2 border-white px-8 py-3 rounded-lg hover:bg-white/10 transition-colors">
                                 Learn More
